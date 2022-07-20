@@ -6,6 +6,10 @@ import IndividualRoyal from "./pages/IndividualRoyal";
 import Kingdom from "./pages/Kingdom";
 import Wealth from "./pages/Wealth";
 import Connexion from "./pages/Connexion";
+import Dashbord from "./pages/Dashbord";
+import UpdateWealth from "./pages/UpdateWealth";
+import UpdateRoyals from "./pages/UpdateRoyals";
+import UpdatePersonalData from "./pages/UpdatePersonalData";
 
 export default function App() {
   return (
@@ -18,6 +22,10 @@ export default function App() {
         <Route path="/kingdom" element={<Kingdom />} />
         <Route path="/wealth" element={<Wealth />} />
         <Route path="/connexion" element={<Connexion />} />
+        <Route path="/dashboard" element={<Dashbord />} />
+        <Route path="/updatewealth" element={<UpdateWealth />} />
+        <Route path="/updateroyals" element={<UpdateRoyals />} />
+        <Route path="/updatepersonal" element={<UpdatePersonalData />} />
       </Routes>
     </Router>
   );

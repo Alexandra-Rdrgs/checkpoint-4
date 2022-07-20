@@ -1,1 +1,1 @@
-export default function UpdateWealth() {}
+export default function UpdateRoyals() {}
