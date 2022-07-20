@@ -1,14 +1,24 @@
-import Home from "@pages/Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Royals from "./pages/Royals";
+import IndividualRoyal from "./pages/IndividualRoyal";
+import Kingdom from "./pages/Kingdom";
+import Wealth from "./pages/Wealth";
+import Connexion from "./pages/Connexion";
 
-import "./App.css";
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/royals" element={<Royals />} />
+        <Route path="/royal/:id" element={<IndividualRoyal />} />
+        <Route path="/kingdom" element={<Kingdom />} />
+        <Route path="/wealth" element={<Wealth />} />
+        <Route path="/connexion" element={<Connexion />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
