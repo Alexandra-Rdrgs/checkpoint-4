@@ -22,4 +22,11 @@ router.put("/kingdoms/:id", ItemController.edit);
 router.post("/kingdoms", ItemController.add);
 router.delete("/kingdoms/:id", ItemController.delete);
 
+router.get("/kingdom_wealth", ItemController.browse);
+router.post("/kingdom_wealth", ItemController.add);
+router.delete(
+  "/kingdom_wealth/kingdoms/:kingdom_id/wealth/:wealth_id",
+  ItemController.delete
+);
+
 module.exports = router;
