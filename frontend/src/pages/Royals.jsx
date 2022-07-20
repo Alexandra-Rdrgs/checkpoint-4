@@ -59,7 +59,6 @@ export default function Royals() {
                 <strong>Kingdom :</strong> {royal.kingdom_id}
               </li>
             </ul>
-            <p>{royal.biography}</p>
           </li>
         ))}
       </ul>
