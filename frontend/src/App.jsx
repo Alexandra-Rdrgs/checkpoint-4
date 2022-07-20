@@ -21,7 +21,6 @@ export default function App() {
         <Route path="/royals/:id" element={<IndividualRoyal />} />
         <Route path="/kingdom" element={<Kingdom />} />
         <Route path="/wealth" element={<Wealth />} />
-        <Route path="/wealth/:kingdom_id" element={<Wealth />} />
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/dashboard" element={<Dashbord />} />
         <Route path="/updatewealth" element={<UpdateWealth />} />
