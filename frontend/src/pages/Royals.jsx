@@ -31,20 +31,27 @@ export default function Royals() {
             </h2>
             <ul>
               <li>
-                <strong>Gender:</strong> {royal.gender}
+                <strong>Gender :</strong> {royal.gender}
               </li>
               <li>
-                <strong>Mother:</strong> {royal.mother}
+                <strong>Mother :</strong> {royal.mother}
               </li>
               <li>
-                <strong>Father:</strong> {royal.father}
+                <strong>Father :</strong> {royal.father}
               </li>
               <li>
-                <strong>Married:</strong>
+                <strong>Married :</strong>
                 {royal.married ? " Yes" : " No"}
               </li>
+              {royal.married && royal.marriedTo !== null ? (
+                <li>
+                  <strong>Married to</strong> : {royal.married_to}
+                </li>
+              ) : (
+                ""
+              )}
               <li>
-                <strong>Kingdom:</strong> {royal.kingdom_id}
+                <strong>Kingdom :</strong> {royal.kingdom_id}
               </li>
             </ul>
             <p>{royal.biography}</p>
