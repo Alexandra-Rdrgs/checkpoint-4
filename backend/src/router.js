@@ -1,32 +1,44 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
+const {
+  ItemController,
+  KingdomController,
+  KingdomWealthController,
+  RoyalController,
+  WealthController,
+} = require("./controllers");
 
 const router = express.Router();
 
-router.get("/royals", ItemController.browse);
-router.get("/royals/:id", ItemController.read);
-router.put("/royals/:id", ItemController.edit);
-router.post("/royals", ItemController.add);
-router.delete("/royals/:id", ItemController.delete);
+router.get("/items", ItemController.browse);
+router.get("/items/:id", ItemController.read);
+router.put("/items/:id", ItemController.edit);
+router.post("/items", ItemController.add);
+router.delete("/items/:id", ItemController.delete);
 
-router.get("/wealth", ItemController.browse);
-router.get("/wealth/:id", ItemController.read);
-router.put("/wealth/:id", ItemController.edit);
-router.post("/wealth", ItemController.add);
-router.delete("/wealth/:id", ItemController.delete);
+router.get("/royals", RoyalController.browse);
+router.get("/royals/:id", RoyalController.read);
+router.put("/royals/:id", RoyalController.edit);
+router.post("/royals", RoyalController.add);
+router.delete("/royals/:id", RoyalController.delete);
 
-router.get("/kingdoms", ItemController.browse);
-router.get("/kingdoms/:id", ItemController.read);
-router.put("/kingdoms/:id", ItemController.edit);
-router.post("/kingdoms", ItemController.add);
-router.delete("/kingdoms/:id", ItemController.delete);
+router.get("/wealth", WealthController.browse);
+router.get("/wealth/:id", WealthController.read);
+router.put("/wealth/:id", WealthController.edit);
+router.post("/wealth", WealthController.add);
+router.delete("/wealth/:id", WealthController.delete);
 
-router.get("/kingdom_wealth", ItemController.browse);
-router.post("/kingdom_wealth", ItemController.add);
+router.get("/kingdoms", KingdomController.browse);
+router.get("/kingdoms/:id", KingdomController.read);
+router.put("/kingdoms/:id", KingdomController.edit);
+router.post("/kingdoms", KingdomController.add);
+router.delete("/kingdoms/:id", KingdomController.delete);
+
+router.get("/kingdom_wealth", KingdomWealthController.browse);
+router.post("/kingdom_wealth", KingdomWealthController.add);
 router.delete(
   "/kingdom_wealth/kingdoms/:kingdom_id/wealth/:wealth_id",
-  ItemController.delete
+  KingdomWealthController.delete
 );
 
 module.exports = router;
