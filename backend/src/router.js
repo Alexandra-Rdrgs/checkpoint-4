@@ -4,10 +4,10 @@ const { ItemController } = require("./controllers");
 
 const router = express.Router();
 
-router.get("/items", ItemController.browse);
-router.get("/items/:id", ItemController.read);
-router.put("/items/:id", ItemController.edit);
-router.post("/items", ItemController.add);
-router.delete("/items/:id", ItemController.delete);
+router.get("/royals", ItemController.browse);
+router.get("/royals/:id", ItemController.read);
+router.put("/royals/:id", ItemController.edit);
+router.post("/royals", ItemController.add);
+router.delete("/royals/:id", ItemController.delete);
 
 module.exports = router;
