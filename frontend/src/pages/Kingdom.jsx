@@ -27,10 +27,10 @@ export default function Kingdom() {
       <ul>
         {kingdoms.map((kingdom) => (
           <li key={kingdom.id}>
-            <img src={kingdom.image} alt={kingdom.name} />
-            <h2>{kingdom.name}</h2>
-            <p>{kingdom.population}</p>
-            <p>{kingdom.description}</p>
+            <figure>
+              <img src={kingdom.image} alt={kingdom.name} />
+              <figcaption>{kingdom.name}</figcaption>
+            </figure>
           </li>
         ))}
       </ul>
