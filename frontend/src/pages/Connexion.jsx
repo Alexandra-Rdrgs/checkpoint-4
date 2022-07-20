@@ -4,7 +4,7 @@ export default function Connexion() {
   return (
     <div>
       <Header />
-      <h1>About Dralanis Kingdom</h1>
+      <h1>Connexion</h1>
     </div>
   );
 }
