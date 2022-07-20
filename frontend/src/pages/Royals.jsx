@@ -40,6 +40,10 @@ export default function Royals() {
                 <strong>Father:</strong> {royal.father}
               </li>
               <li>
+                <strong>Married:</strong>
+                {royal.married ? " Yes" : " No"}
+              </li>
+              <li>
                 <strong>Kingdom:</strong> {royal.kingdom_id}
               </li>
             </ul>
