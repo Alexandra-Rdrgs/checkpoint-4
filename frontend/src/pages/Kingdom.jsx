@@ -4,6 +4,12 @@ import Header from "../components/Header";
 
 export default function Kingdom() {
   const [kingdoms, setKingdoms] = useState([]);
+  const [selected, setSelected] = useState("");
+
+  const handleSelectedKingdom = (event) => {
+    const kingdomSelected = event.target.value;
+    setSelected(kingdomSelected);
+  };
 
   useEffect(() => {
     axios
@@ -21,19 +27,31 @@ export default function Kingdom() {
   }, []);
 
   return (
-    <div>
+    <>
       <Header />
-      <h1>Kingdoms</h1>
-      <ul>
-        {kingdoms.map((kingdom) => (
-          <li key={kingdom.id}>
-            <figure>
+      <h1>Discover more about our kingdoms</h1>
+      <section>
+        <select onChange={(event) => handleSelectedKingdom(event)}>
+          <option value="none"> --- Select a kingdom --- </option>
+          {kingdoms.map((kingdom) => (
+            <option key={kingdom.id} value={kingdom.id}>
+              {kingdom.name}
+            </option>
+          ))}
+        </select>
+      </section>
+      <section>
+        {kingdoms
+          .filter((kingdom) => kingdom.id === parseInt(selected, 10))
+          .map((kingdom) => (
+            <article key={kingdom.id}>
               <img src={kingdom.image} alt={kingdom.name} />
-              <figcaption>{kingdom.name}</figcaption>
-            </figure>
-          </li>
-        ))}
-      </ul>
-    </div>
+              <h2>{kingdom.name}</h2>
+              <p>{kingdom.population}</p>
+              <p>{kingdom.description}</p>
+            </article>
+          ))}
+      </section>
+    </>
   );
 }
