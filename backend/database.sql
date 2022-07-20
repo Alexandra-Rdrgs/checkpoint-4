@@ -28,19 +28,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kingdom` (
   `id` int(11) UNSIGNED NOT NULL,
+  `image` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `population` int(11) UNSIGNED NOT NULL
+  `population` int(11) UNSIGNED NOT NULL,
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `kingdom`
 --
 
-INSERT INTO `kingdom` (`id`, `name`, `population`) VALUES
-(1, 'Colchidys Kingdom', 2308),
-(2, 'Argador', 2643),
-(3, 'Juliroy Adys', 4521),
-(4, 'Lorroy Kingdom', 3863);
+INSERT INTO `kingdom` (`id`, `image`, `name`, `population`, `description`) VALUES
+(1, '', 'Colchidys Kingdom', 2308, 'azerty'),
+(2, '', 'Argador', 2643, 'azerty'),
+(3, '', 'Juliroy Adys', 4521, 'azerty'),
+(4, '', 'Lorroy Kingdom', 3863, 'azerty');
 
 --
 -- Index pour les tables exportées
