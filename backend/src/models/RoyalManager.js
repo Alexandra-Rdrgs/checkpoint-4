@@ -1,21 +1,21 @@
 const AbstractManager = require("./AbstractManager");
 
-class ItemManager extends AbstractManager {
-  static table = "item";
+class RoyalManager extends AbstractManager {
+  static table = "royal";
 
-  insert(item) {
+  insert(royal) {
     return this.connection.query(
-      `insert into ${ItemManager.table} (title) values (?)`,
-      [item.title]
+      `insert into ${RoyalManager.table} (title) values (?)`,
+      [royal.title]
     );
   }
 
-  update(item) {
+  update(royal) {
     return this.connection.query(
-      `update ${ItemManager.table} set title = ? where id = ?`,
-      [item.title, item.id]
+      `update ${RoyalManager.table} set title = ? where id = ?`,
+      [royal.title, royal.id]
     );
   }
 }
 
-module.exports = ItemManager;
+module.exports = RoyalManager;
