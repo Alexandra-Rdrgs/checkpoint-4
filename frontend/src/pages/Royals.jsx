@@ -31,6 +31,9 @@ export default function Royals() {
             </h2>
             <ul>
               <li>
+                <strong>Gender:</strong> {royal.gender}
+              </li>
+              <li>
                 <strong>Mother:</strong> {royal.mother}
               </li>
               <li>
