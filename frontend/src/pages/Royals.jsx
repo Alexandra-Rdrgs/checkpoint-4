@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
 export default function Royals() {
@@ -25,10 +26,14 @@ export default function Royals() {
       <ul>
         {royals.map((royal) => (
           <li key={royal.id}>
-            <img src={royal.image} alt={royal.firstname} />
-            <h2>
-              {royal.firstname} {royal.lastname}
-            </h2>
+            <figure>
+              <Link to={`/royals/${royal.id}`}>
+                <img src={royal.image} alt={royal.firstname} />
+                <figcaption>
+                  {royal.firstname} {royal.lastname}
+                </figcaption>
+              </Link>
+            </figure>
             <ul>
               <li>
                 <strong>Gender :</strong> {royal.gender}
