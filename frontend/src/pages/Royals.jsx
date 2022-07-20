@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
 export default function Royals() {
   const [royals, setRoyals] = useState([]);
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     axios
@@ -22,41 +24,58 @@ export default function Royals() {
     <div>
       <Header />
       <h1>Royals</h1>
+      <input
+        type="text"
+        id="filter"
+        name="filter"
+        placeholder="Search for royals..."
+        value={filter}
+        onChange={(event) => setFilter(event.target.value)}
+      />
       <ul>
-        {royals.map((royal) => (
-          <li key={royal.id}>
-            <img src={royal.image} alt={royal.firstname} />
-            <h2>
-              {royal.firstname} {royal.lastname}
-            </h2>
-            <ul>
-              <li>
-                <strong>Gender :</strong> {royal.gender}
-              </li>
-              <li>
-                <strong>Mother :</strong> {royal.mother}
-              </li>
-              <li>
-                <strong>Father :</strong> {royal.father}
-              </li>
-              <li>
-                <strong>Married :</strong>
-                {royal.married ? " Yes" : " No"}
-              </li>
-              {royal.married && royal.marriedTo !== null ? (
+        {royals
+          .filter(
+            (royal) =>
+              royal.firstname.includes(filter) ||
+              royal.lastname.includes(filter)
+          )
+          .map((royal) => (
+            <li key={royal.id}>
+              <figure>
+                <Link to={`/royals/${royal.id}`}>
+                  <img src={royal.image} alt={royal.firstname} />
+                  <figcaption>
+                    {royal.firstname} {royal.lastname}
+                  </figcaption>
+                </Link>
+              </figure>
+              <ul>
                 <li>
-                  <strong>Married to</strong> : {royal.married_to}
+                  <strong>Gender :</strong> {royal.gender}
                 </li>
-              ) : (
-                ""
-              )}
-              <li>
-                <strong>Kingdom :</strong> {royal.kingdom_id}
-              </li>
-            </ul>
-            <p>{royal.biography}</p>
-          </li>
-        ))}
+                <li>
+                  <strong>Mother :</strong> {royal.mother}
+                </li>
+                <li>
+                  <strong>Father :</strong> {royal.father}
+                </li>
+                <li>
+                  <strong>Married :</strong>
+                  {royal.married ? " Yes" : " No"}
+                </li>
+                {royal.married && royal.marriedTo !== null ? (
+                  <li>
+                    <strong>Married to</strong> : {royal.married_to}
+                  </li>
+                ) : (
+                  ""
+                )}
+                <li>
+                  <strong>Kingdom :</strong> {royal.kingdom_id}
+                </li>
+              </ul>
+            </li>
+          ))}
       </ul>
     </div>
   );
