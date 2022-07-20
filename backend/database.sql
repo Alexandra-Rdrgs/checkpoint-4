@@ -39,10 +39,10 @@ CREATE TABLE `kingdom` (
 --
 
 INSERT INTO `kingdom` (`id`, `image`, `name`, `population`, `description`) VALUES
-(1, '', 'Colchidys Kingdom', 2308, 'azerty'),
+(1, '', 'Colchidys', 2308, 'azerty'),
 (2, '', 'Argador', 2643, 'azerty'),
 (3, '', 'Juliroy Adys', 4521, 'azerty'),
-(4, '', 'Lorroy Kingdom', 3863, 'azerty');
+(4, '', 'Lorroy Valis', 3863, 'azerty');
 
 --
 -- Index pour les tables exportées
