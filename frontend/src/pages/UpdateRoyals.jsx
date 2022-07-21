@@ -1,6 +1,37 @@
+import { useForm } from "react-hook-form";
+import axios from "axios";
 import Header from "../components/Header";
 
 export default function UpdateRoyals() {
+  const { formState, handleSubmit, getValues } = useForm();
+
+  const { isSubmitedSuccessful } = formState;
+
+  const updateRoyal = (data) => {
+    axios
+      .put(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/royals/${data.id}`,
+        data
+      )
+      .then((res) => {
+        console.warn(res);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  };
+
+  const postRoyal = () => {
+    axios
+      .post(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/royals`,
+        getValues()
+      )
+      .then((response) => response);
+  };
+
   return (
     <div>
       <Header />
@@ -12,7 +43,7 @@ export default function UpdateRoyals() {
       </p>
       <fieldset>
         <legend>Add a new royal</legend>
-        <form>
+        <form onSubmit={handleSubmit(postRoyal)}>
           <label htmlFor="firstname">
             Royal firstname :
             <input type="text" />
@@ -52,12 +83,12 @@ export default function UpdateRoyals() {
             Royal picture :
             <input type="file" />
           </label>
-          <button type="submit">Add a new royal member</button>
+          <input type="submit" />
         </form>
       </fieldset>
       <fieldset>
         <legend>Update a royal</legend>
-        <form>
+        <form onSubmit={handleSubmit(updateRoyal)}>
           <label htmlFor="firstname">
             Royal firstname :
             <input type="text" />
@@ -97,7 +128,10 @@ export default function UpdateRoyals() {
             Royal picture :
             <input type="file" />
           </label>
-          <button type="submit">Update a royal member</button>
+          <input type="submit" />
+          {isSubmitedSuccessful && (
+            <p>Votre inscription a été prise en compte.</p>
+          )}
         </form>
       </fieldset>
     </div>
