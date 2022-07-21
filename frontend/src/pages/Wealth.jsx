@@ -45,38 +45,48 @@ export default function Wealth() {
   return (
     <>
       <Header />
-      <section>
-        <h1>Choose your kingdom and see its wealth</h1>
-        <p>
-          Select a kingdom in the list below and you'll be able to see all of
-          its possessions.
-        </p>
-      </section>
-      <section>
-        {kingdoms.map((kingdom) => (
-          <figure key={kingdom.id}>
-            <img src={kingdom.image} alt={kingdom.name} />
-            <figcaption>{kingdom.name} wealth</figcaption>
-            <input
-              type="radio"
-              name="id"
-              value={kingdom.id}
-              onChange={handleChange}
-            />
-          </figure>
-        ))}
-      </section>
-      <h1>{selectedValue}</h1>
-      <section>
-        {wealths.map((wealth) => (
-          <article key={wealth.id}>
-            <img src={wealth.image} alt={wealth.name} />
-            <h2>{wealth.name}</h2>
-            <p>{wealth.value}</p>
-            <p>{wealth.description}</p>
-          </article>
-        ))}
-      </section>
+      <main className="m-[2rem]">
+        <section className="mb-4">
+          <h1 className="text-2xl">Choose your kingdom</h1>
+          <p className="text-lg">
+            Select a kingdom in the list below and you'll be able to see all of
+            its possessions.
+          </p>
+        </section>
+        <section className="flex flex-wrap gap-2 justify-center items-center text-center mb-8">
+          {kingdoms.map((kingdom) => (
+            <figure
+              key={kingdom.id}
+              className="border-2 border-gray-600 min-w-[9rem] p-4"
+            >
+              <img src={kingdom.image} alt={kingdom.name} />
+              <figcaption>{kingdom.name}</figcaption>
+              <input
+                type="radio"
+                name="id"
+                value={kingdom.id}
+                onChange={handleChange}
+              />
+            </figure>
+          ))}
+        </section>
+        <h1 className="text-2xl mt-8 mb-4 text-center">
+          ID of the selected kingdom :{selectedValue}
+        </h1>
+        <section className="flex flex-wrap gap-2 justify-center items-center text-center">
+          {wealths.map((wealth) => (
+            <article
+              key={wealth.id}
+              className="border-2 border-gray-600 min-w-[9rem] p-4"
+            >
+              <img src={wealth.image} alt={wealth.name} />
+              <h2>{wealth.name}</h2>
+              <p>{wealth.value}</p>
+              <p>{wealth.description}</p>
+            </article>
+          ))}
+        </section>
+      </main>
     </>
   );
 }
