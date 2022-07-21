@@ -57,7 +57,12 @@ export default function Wealth() {
           <figure key={kingdom.id}>
             <img src={kingdom.image} alt={kingdom.name} />
             <figcaption>{kingdom.name} wealth</figcaption>
-            <input type="radio" value={kingdom.id} onChange={handleChange} />
+            <input
+              type="radio"
+              name="id"
+              value={kingdom.id}
+              onChange={handleChange}
+            />
           </figure>
         ))}
       </section>
