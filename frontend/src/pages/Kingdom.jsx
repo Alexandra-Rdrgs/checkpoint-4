@@ -29,29 +29,34 @@ export default function Kingdom() {
   return (
     <>
       <Header />
-      <h1>Discover more about our kingdoms</h1>
-      <section>
-        <select onChange={(event) => handleSelectedKingdom(event)}>
-          <option value="none"> --- Select a kingdom --- </option>
-          {kingdoms.map((kingdom) => (
-            <option key={kingdom.id} value={kingdom.id}>
-              {kingdom.name}
+      <main className="m-[2rem]">
+        <h1 className="text-2xl mb-8">Discover more about our kingdoms</h1>
+        <section>
+          <select onChange={(event) => handleSelectedKingdom(event)}>
+            <option value="none" className="mt-2 mb-8 p-2 tracking-wide">
+              {" "}
+              ----- Select a kingdom -----{" "}
             </option>
-          ))}
-        </select>
-      </section>
-      <section>
-        {kingdoms
-          .filter((kingdom) => kingdom.id === parseInt(selected, 10))
-          .map((kingdom) => (
-            <article key={kingdom.id}>
-              <img src={kingdom.image} alt={kingdom.name} />
-              <h2>{kingdom.name}</h2>
-              <p>{kingdom.population}</p>
-              <p>{kingdom.description}</p>
-            </article>
-          ))}
-      </section>
+            {kingdoms.map((kingdom) => (
+              <option key={kingdom.id} value={kingdom.id}>
+                {kingdom.name}
+              </option>
+            ))}
+          </select>
+        </section>
+        <section>
+          {kingdoms
+            .filter((kingdom) => kingdom.id === parseInt(selected, 10))
+            .map((kingdom) => (
+              <article key={kingdom.id}>
+                <img src={kingdom.image} alt={kingdom.name} />
+                <h2>{kingdom.name}</h2>
+                <p>{kingdom.population}</p>
+                <p>{kingdom.description}</p>
+              </article>
+            ))}
+        </section>
+      </main>
     </>
   );
 }
