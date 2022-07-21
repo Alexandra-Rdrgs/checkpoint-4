@@ -47,7 +47,9 @@ a {
   color: #404040;
   text-transform: uppercase;
   font-weight: bold;
+  line-height: 4rem;
   padding-left: 2rem;
+  text-align: center;
 }
 
 .menuNav li:first-child {
