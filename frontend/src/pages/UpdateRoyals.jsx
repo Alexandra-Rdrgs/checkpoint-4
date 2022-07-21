@@ -104,6 +104,7 @@ export default function UpdateRoyals() {
               type="submit"
               className="mt-4 py-2 bg-[#000] text-[#fff] font-bold rounded max-w-[10rem]"
             />
+            {isSubmitedSuccessful && <p>Votre ajout a été prise en compte</p>}
           </form>
         </fieldset>
         <fieldset className="mt-2 mb-8 border-2 border-gray-600 p-2">
@@ -161,7 +162,7 @@ export default function UpdateRoyals() {
               className="mt-4 py-2 bg-[#000] text-[#fff] font-bold rounded max-w-[10rem]"
             />
             {isSubmitedSuccessful && (
-              <p>Votre inscription a été prise en compte.</p>
+              <p>Votre modification a été prise en compte</p>
             )}
           </form>
         </fieldset>
