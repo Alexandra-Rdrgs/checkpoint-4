@@ -1,28 +1,93 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { MdClose } from "react-icons/md";
+import { FiMenu } from "react-icons/fi";
+import "../App.css";
 
 export default function Header() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const handleToggle = () => {
+    setNavbarOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setNavbarOpen(false);
+  };
+
   return (
     <header>
       <h2>Dralyanis Kingdom</h2>
-      <nav>
-        <ul>
+      <nav className="navBar">
+        <button type="button" onClick={handleToggle}>
+          {navbarOpen ? (
+            <MdClose style={{ color: "#000", width: "40px", height: "40px" }} />
+          ) : (
+            <FiMenu
+              style={{ color: "#7b7b7b", width: "40px", height: "40px" }}
+            />
+          )}
+        </button>
+        <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              activeClassName="active-link"
+              onClick={() => closeMenu()}
+              exact
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link
+              to="/about"
+              activeClassName="active-link"
+              onClick={() => closeMenu()}
+              exact
+            >
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/royals">Royals</Link>
+            <Link
+              to="/royals"
+              activeClassName="active-link"
+              onClick={() => closeMenu()}
+              exact
+            >
+              Royals
+            </Link>
           </li>
           <li>
-            <Link to="/kingdom">Kingdom</Link>
+            <Link
+              to="/kingdom"
+              activeClassName="active-link"
+              onClick={() => closeMenu()}
+              exact
+            >
+              Kingdom
+            </Link>
           </li>
           <li>
-            <Link to="/wealth">Wealth</Link>
+            <Link
+              to="/wealth"
+              activeClassName="active-link"
+              onClick={() => closeMenu()}
+              exact
+            >
+              Wealth
+            </Link>
           </li>
           <li>
-            <Link to="/connexion">Connexion</Link>
+            <Link
+              to="/connexion"
+              activeClassName="active-link"
+              onClick={() => closeMenu()}
+              exact
+            >
+              Connexion
+            </Link>
           </li>
         </ul>
       </nav>
