@@ -35,6 +35,7 @@ router.post("/kingdoms", KingdomController.add);
 router.delete("/kingdoms/:id", KingdomController.delete);
 
 router.get("/kingdom_wealth", KingdomWealthController.browse);
+router.get("/kingdom_wealth/:id", KingdomWealthController.read);
 router.post("/kingdom_wealth", KingdomWealthController.add);
 router.delete(
   "/kingdom_wealth/kingdoms/:kingdom_id/wealth/:wealth_id",
