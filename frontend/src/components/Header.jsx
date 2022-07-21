@@ -17,11 +17,11 @@ export default function Header() {
 
   return (
     <header>
-      <h2 className="text-3xl m-[2rem]">Dralyanis Kingdom</h2>
+      <h2 className="text-3xl m-[2rem]">United Kingdoms of Dralyanis</h2>
       <nav className="navBar">
         <button type="button" onClick={handleToggle}>
           {navbarOpen ? (
-            <MdClose style={{ color: "#000", width: "40px", height: "40px" }} />
+            <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
           ) : (
             <FiMenu style={{ color: "#000", width: "40px", height: "40px" }} />
           )}

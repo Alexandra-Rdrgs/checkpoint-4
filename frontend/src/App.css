@@ -27,12 +27,12 @@ body {
   padding: 0;
   position: fixed;
   top: 0;
-  background: #ccc;
+  background: #000;
   right: 0;
   height: 100%;
   width: 0;
   overflow: hidden;
-  max-width: 30%;
+  max-width: 100%;
   transition: all 0.3s ease-in-out;
   z-index: 9;
 }
@@ -41,13 +41,13 @@ body {
   width: 100%;
 }
 
-a {
+nav > ul > li {
   display: block;
   text-decoration: none;
-  color: #404040;
+  color: #fff;
   text-transform: uppercase;
-  font-weight: bold;
-  line-height: 4rem;
+  font-size: x-large;
+  line-height: 6rem;
   padding-left: 2rem;
   text-align: center;
 }
@@ -59,4 +59,10 @@ a {
 .navBar button {
   background: transparent;
   border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menuNav {
+    max-width: 33%;
+  }
 }
