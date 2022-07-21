@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export default function WealthCard({ wealth }) {
   return (
-    <article>
+    <article key={wealth.id}>
       <img src={wealth.image} alt={wealth.name} />
       <h2>{wealth.name}</h2>
       <p>{wealth.value}</p>
