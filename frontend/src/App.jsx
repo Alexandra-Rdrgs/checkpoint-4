@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/dashboard" element={<Dashbord />} />
         <Route path="/updatewealth" element={<UpdateWealth />} />
         <Route path="/updateroyals" element={<UpdateRoyals />} />
-        <Route path="/updateprofil" element={<UpdatePersonalData />} />
+        <Route path="/updateprofile" element={<UpdatePersonalData />} />
       </Routes>
     </Router>
   );

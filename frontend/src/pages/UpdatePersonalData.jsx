@@ -4,7 +4,7 @@ export default function UpdatePersonalData() {
   return (
     <div>
       <Header />
-      <h1>Update yoyr royal profile</h1>
+      <h1>Update your royal profile</h1>
       <p>
         You can update your royal profile here, change your name, or change your
         password. Keep in mind that you can't change your kingdom's name. Keep
