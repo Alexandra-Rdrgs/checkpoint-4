@@ -36,8 +36,8 @@ export default function Royals() {
         {royals
           .filter(
             (royal) =>
-              royal.firstname.includes(filter) ||
-              royal.lastname.includes(filter)
+              royal.firstname.toLowerCase().includes(filter.toLowerCase()) ||
+              royal.lastname.toLowerCase().includes(filter.toLowerCase())
           )
           .map((royal) => (
             <li key={royal.id}>
