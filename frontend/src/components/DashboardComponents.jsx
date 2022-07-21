@@ -1,16 +1,23 @@
-export default function DashboardComponents(
+import PropTypes from "prop-types";
+
+export default function DashboardComponents({
   title,
   description,
+  link,
   action,
-  actionText
-) {
+}) {
   return (
     <div>
       <h2>{title}</h2>
       <p>{description}</p>
-      <button type="button" onClick={action}>
-        {actionText}
-      </button>
+      <a href={link}>{action}</a>
     </div>
   );
 }
+
+DashboardComponents.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  action: PropTypes.string.isRequired,
+};
