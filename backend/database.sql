@@ -76,8 +76,8 @@ ALTER TABLE `kingdom`
 CREATE TABLE `royal` (
   `id` int(11) UNSIGNED NOT NULL,
   `firstname` varchar(255) NOT NULL,
-  `gender` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
   `mother` varchar(255) NOT NULL,
   `father` varchar(255) NOT NULL,
   `married` tinyint(1) NOT NULL,
