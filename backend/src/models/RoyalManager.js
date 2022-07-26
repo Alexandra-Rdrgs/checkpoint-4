@@ -5,7 +5,7 @@ class RoyalManager extends AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `select * from ${RoyalManager.table} inner join kingdom on kingdom.id = royal.kingdom_id`
+      `SELECT r.id, r.firstname, r.lastname, r.mother, r.father, r.married, r.married_to, r.image, r.biography, k.name as kingdom_name FROM ${RoyalManager.table} as r JOIN kingdom as k ON k.id=r.kingdom_id`
     );
   }
 

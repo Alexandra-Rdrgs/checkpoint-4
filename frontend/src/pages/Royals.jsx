@@ -79,7 +79,7 @@ export default function Royals() {
                     ""
                   )}
                   <li>
-                    <strong>Kingdom :</strong> {royal.kingdom_id}
+                    <strong>Kingdom :</strong> {royal.kingdom_name}
                   </li>
                 </ul>
               </li>

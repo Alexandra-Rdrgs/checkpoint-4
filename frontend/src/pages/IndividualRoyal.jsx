@@ -64,7 +64,7 @@ export default function IndividualRoyal() {
                 ""
               )}
               <li>
-                <strong>Kingdom :</strong> {royal.kingdom_id}
+                <strong>Kingdom :</strong> {royal.kingdom_name}
               </li>
             </ul>
           </section>
