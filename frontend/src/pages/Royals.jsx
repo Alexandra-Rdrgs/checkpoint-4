@@ -49,11 +49,13 @@ export default function Royals() {
                 key={royal.id}
                 className="p-4 border-2 border-gray-200 min-w-[20rem] mb-4"
               >
+                {" "}
+                {royal.id}
                 <figure>
                   <Link to={`/royals/${royal.id}`}>
                     <img src={royal.image} alt={royal.firstname} />
                     <figcaption>
-                      {royal.firstname} {royal.lastname}
+                      {royal.id} {royal.firstname} {royal.lastname}
                     </figcaption>
                   </Link>
                 </figure>
