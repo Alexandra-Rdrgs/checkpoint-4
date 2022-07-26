@@ -53,7 +53,7 @@ export default function Royals() {
                   <Link to={`/royals/${royal.id}`}>
                     <img src={royal.image} alt={royal.firstname} />
                     <figcaption>
-                      {royal.id} {royal.firstname} {royal.lastname}
+                      {royal.firstname} {royal.lastname}
                     </figcaption>
                   </Link>
                 </figure>
