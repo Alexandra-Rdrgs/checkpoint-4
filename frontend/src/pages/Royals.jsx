@@ -10,7 +10,7 @@ export default function Royals() {
   useEffect(() => {
     axios
       .get(
-        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/royals`
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/royals/`
       )
       .then((res) => {
         setRoyals(res.data);

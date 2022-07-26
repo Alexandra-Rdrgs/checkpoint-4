@@ -6,6 +6,12 @@ import Header from "../components/Header";
 export default function UpdateRoyals() {
   const { formState, handleSubmit, getValues } = useForm();
   const [royals, setRoyals] = useState([]);
+  const [selectedRoyal, setSelectedRoyal] = useState("");
+
+  const handleSelectedRoyal = (event) => {
+    const RoyalSelected = event.target.value;
+    setSelectedRoyal(RoyalSelected);
+  };
 
   const { isSubmitedSuccessful } = formState;
 
@@ -109,60 +115,68 @@ export default function UpdateRoyals() {
         </fieldset>
         <fieldset className="mt-2 mb-8 border-2 border-gray-600 p-2">
           <legend className="text-xl">Update a royal</legend>
-          <select className="max-w-[50%]">
-            <option>Select a royal</option>
+          <select
+            className="max-w-[50%]"
+            onChange={(event) => handleSelectedRoyal(event)}
+          >
+            <option> ----- Select a royal ----- </option>
             {royals.map((royal) => (
-              <option key={royal.id}>
+              <option key={royal.id} value={royal.id}>
                 {royal.firstname} {royal.lastname}
               </option>
             ))}
           </select>
           <form className="flex flex-col" onSubmit={handleSubmit(updateRoyal)}>
-            <label htmlFor="firstname">
-              Royal firstname :
-              <input type="text" />
-            </label>
-            <label htmlFor="lastname">
-              Royal lastname :
-              <input type="text" />
-            </label>
-            <label htmlFor="mother">
-              Royal mother :
-              <input type="text" />
-            </label>
-            <label htmlFor="father">
-              Royal father :
-              <input type="text" />
-            </label>
-            <div>
-              <label htmlFor="married">
-                Married :
-                <label htmlFor="yes">
-                  Yes <input type="checkbox" />
-                </label>{" "}
-                <label htmlFor="no">
-                  No <input type="checkbox" />
+            {selectedRoyal && (
+              <>
+                <label htmlFor="firstname">
+                  Royal firstname :
+                  <input type="text" value={selectedRoyal.firstname} />
                 </label>
-              </label>
-            </div>
-            <label htmlFor="marriedTo">
-              The name of the spouse :
-              <input type="text" />
-            </label>
-            <label htmlFor="biography">
-              Royal biography :
-              <textarea />
-            </label>
-            <label htmlFor="image">
-              Royal picture :
-              <input type="file" />
-            </label>
-            <input
-              type="submit"
-              className="mt-4 py-2 bg-[#000] text-[#fff] font-bold rounded max-w-[10rem]"
-            />
-            {isSubmitedSuccessful && (
-              <p>Votre modification a été prise en compte</p>
+                <label htmlFor="lastname">
+                  Royal lastname :
+                  <input type="text" value={selectedRoyal.lastname} />
+                </label>
+                <label htmlFor="mother">
+                  Royal mother :
+                  <input type="text" value={selectedRoyal.mother} />
+                </label>
+                <label htmlFor="father">
+                  Royal father :
+                  <input type="text" value={selectedRoyal.father} />
+                </label>
+                <div>
+                  <label htmlFor="married">
+                    Married :
+                    <label htmlFor="yes">
+                      Yes{" "}
+                      <input type="checkbox" value={selectedRoyal.married} />
+                    </label>{" "}
+                    <label htmlFor="no">
+                      No <input type="checkbox" value={selectedRoyal.married} />
+                    </label>
+                  </label>
+                </div>
+                <label htmlFor="marriedTo">
+                  The name of the spouse :
+                  <input type="text" value={selectedRoyal.married_to} />
+                </label>
+                <label htmlFor="biography">
+                  Royal biography :
+                  <textarea value={selectedRoyal.biography} />
+                </label>
+                <label htmlFor="image">
+                  Royal picture :
+                  <input type="file" />
+                </label>
+                <input
+                  type="submit"
+                  className="mt-4 py-2 bg-[#000] text-[#fff] font-bold rounded max-w-[10rem]"
+                />
+                {isSubmitedSuccessful && (
+                  <p>Votre modification a été prise en compte</p>
+                )}
+              </>
             )}
           </form>
         </fieldset>

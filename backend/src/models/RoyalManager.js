@@ -3,6 +3,12 @@ const AbstractManager = require("./AbstractManager");
 class RoyalManager extends AbstractManager {
   static table = "royal";
 
+  findAll() {
+    return this.connection.query(
+      `select * from ${RoyalManager.table} inner join kingdom on kingdom.id = royal.kingdom_id`
+    );
+  }
+
   insert(royal) {
     return this.connection.query(
       `insert into ${RoyalManager.table} (firstname, lastname, mother, father, image, biography, kingdom_id) values (?, ?, ?, ?, ?, ?, ?)`,
