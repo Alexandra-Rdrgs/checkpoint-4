@@ -7,10 +7,12 @@ export default function DashboardComponents({
   action,
 }) {
   return (
-    <div>
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <a href={link}>{action}</a>
+    <div className="border-2 border-black flex flex-col items-center max-w-[325px] p-[2rem] gap-y-[4rem]">
+      <h2 className="text-2xl text-center">{title}</h2>
+      <a className="text-lg bg-black text-white rounded p-[1rem]" href={link}>
+        {action}
+      </a>
+      <p className="text-sm text-center italic">{description}</p>
     </div>
   );
 }
