@@ -9,6 +9,13 @@ class RoyalManager extends AbstractManager {
     );
   }
 
+  find(id) {
+    return this.connection.query(
+      `SELECT r.id, r.firstname, r.lastname, r.mother, r.father, r.married, r.married_to, r.image, r.biography, k.name as kingdom_name FROM ${RoyalManager.table} as r JOIN kingdom as k ON k.id=r.kingdom_id WHERE r.id = ?`,
+      [id]
+    );
+  }
+
   insert(royal) {
     return this.connection.query(
       `insert into ${RoyalManager.table} (firstname, lastname, mother, father, image, biography, kingdom_id) values (?, ?, ?, ?, ?, ?, ?)`,

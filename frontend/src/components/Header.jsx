@@ -30,7 +30,7 @@ export default function Header() {
           <li>
             <Link
               to="/"
-              activeClassName="active-link"
+              className="active-link"
               onClick={() => closeMenu()}
               exact
             >
@@ -40,7 +40,7 @@ export default function Header() {
           <li>
             <Link
               to="/about"
-              activeClassName="active-link"
+              className="active-link"
               onClick={() => closeMenu()}
               exact
             >
@@ -50,7 +50,7 @@ export default function Header() {
           <li>
             <Link
               to="/royals"
-              activeClassName="active-link"
+              className="active-link"
               onClick={() => closeMenu()}
               exact
             >
@@ -60,7 +60,7 @@ export default function Header() {
           <li>
             <Link
               to="/kingdom"
-              activeClassName="active-link"
+              className="active-link"
               onClick={() => closeMenu()}
               exact
             >
@@ -70,7 +70,7 @@ export default function Header() {
           <li>
             <Link
               to="/wealth"
-              activeClassName="active-link"
+              className="active-link"
               onClick={() => closeMenu()}
               exact
             >
@@ -80,7 +80,7 @@ export default function Header() {
           <li>
             <Link
               to="/connexion"
-              activeClassName="active-link"
+              className="active-link"
               onClick={() => closeMenu()}
               exact
             >

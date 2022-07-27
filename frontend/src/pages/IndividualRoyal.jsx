@@ -62,7 +62,7 @@ export default function IndividualRoyal() {
                     <strong>Mother :</strong> {royal.mother}
                   </li>
                   <li>
-                    <strong>Father: </strong> {royal.father}
+                    <strong>Father :</strong> {royal.father}
                   </li>
                   <li>
                     <strong>Married :</strong>
