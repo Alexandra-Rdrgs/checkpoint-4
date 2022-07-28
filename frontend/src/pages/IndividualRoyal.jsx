@@ -31,7 +31,7 @@ export default function IndividualRoyal() {
         <button
           type="button"
           onClick={precedent}
-          className="text-3xl mt-8 text-[#000] font-bold rounded"
+          className="text-3xl text-[#000] font-bold rounded"
         >
           ←
         </button>
